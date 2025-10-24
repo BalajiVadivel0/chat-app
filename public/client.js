@@ -1,6 +1,6 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-  const socket = io('http://localhost:3000');
+  const socket = io();
   
   const form = document.getElementById('form');
   const input = document.getElementById('input');

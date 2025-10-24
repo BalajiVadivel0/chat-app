@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Real-Time Chat App</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💬 Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="chat-container">
-    <h1>💬 Real-Time Chat</h1>
-    <div id="messages" class="messages"></div>
+    <div class="chat-header">
+      <h1>💬 Real-Time Chat</h1>
+      <div class="status">
+        <div class="status-dot"></div>
+        <span>Online</span>
+      </div>
+    </div>
+    
+    <div id="messages" class="messages">
+      <div class="welcome-msg">
+        <div class="welcome-icon">🚀</div>
+        <p>Welcome to the chat! Start a conversation...</p>
+      </div>
+    </div>
+    
     <form id="form" class="chat-form">
-      <input id="input" autocomplete="off" placeholder="Type a message..." />
-      <button type="submit">Send</button>
+      <div class="input-group">
+        <input id="input" autocomplete="off" placeholder="Type your message..." />
+        <button type="submit">
+          <span>Send</span>
+          <div class="send-icon">➤</div>
+        </button>
+      </div>
     </form>
   </div>
 
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
   <script src="client.js"></script>
 </body>
 </html>

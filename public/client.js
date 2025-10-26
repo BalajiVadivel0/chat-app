@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const input = document.getElementById('input');
   const messages = document.getElementById('messages');
   
-  // Get username when page loads
   const username = prompt('Enter your name:') || 'Anonymous';
   
-  // Send message
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (input.value.trim()) {
@@ -21,17 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Receive messages
   socket.on('chat message', (data) => {
     displayMessage(data.user, data.message);
   });
   
-  // System messages (join/leave)
   socket.on('system message', (msg) => {
     displaySystemMessage(msg);
   });
   
-  // Connection status
   socket.on('connect', () => {
     console.log('Connected to server');
   });
@@ -41,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   function displayMessage(user, msg) {
-    // Remove welcome message on first real message
     const welcomeMsg = messages.querySelector('.welcome-msg');
     if (welcomeMsg) {
       welcomeMsg.remove();
@@ -55,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function displaySystemMessage(msg) {
-    // Remove welcome message on first system message too
     const welcomeMsg = messages.querySelector('.welcome-msg');
     if (welcomeMsg) {
       welcomeMsg.remove();

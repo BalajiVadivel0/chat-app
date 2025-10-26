@@ -234,7 +234,6 @@ button:hover .send-icon {
   transform: translateX(2px);
 }
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
   body {
     padding: 10px;
